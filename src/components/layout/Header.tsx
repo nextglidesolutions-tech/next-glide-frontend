@@ -31,7 +31,7 @@ export function Header() {
               className="h-12 w-auto object-contain"
             />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
-              Next Glide
+              NextGlide
             </span>
           </Link>
 
