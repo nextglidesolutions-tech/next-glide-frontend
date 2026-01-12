@@ -93,18 +93,44 @@ export default function Careers() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!selectedJob) return;
+
     setSubmitting(true);
-    // Simulate submission for now
-    setTimeout(() => {
-      setSubmitting(false);
-      setSelectedJob(null);
-      toast({
-        title: 'Application Submitted',
-        description: 'Thank you for your interest! We will review your application soon.'
+
+    try {
+      const response = await fetch(`${apiUrl}/api/applications`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          jobId: selectedJob._id,
+          formData: formData
+        }),
       });
-    }, 1500);
+
+      if (response.ok) {
+        toast({
+          title: 'Application Submitted',
+          description: 'Thank you for your interest! We will review your application soon.'
+        });
+        setSelectedJob(null);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit application');
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
+        variant: 'destructive',
+        title: 'Submission Failed',
+        description: 'There was an error submitting your application. Please try again.'
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleInputChange = (fieldId: string, value: string) => {
