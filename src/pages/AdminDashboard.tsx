@@ -18,9 +18,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Download, RefreshCw, Trash2, Mail, Send } from 'lucide-react';
+import { Download, RefreshCw, Trash2, Mail, Send, Users, Briefcase, FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import AdminLayout from '@/components/admin/AdminLayout';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import JobManager from '@/components/admin/JobManager';
+import FormBuilder from '@/components/admin/FormBuilder';
 
 interface Contact {
     _id: string;
@@ -206,94 +209,118 @@ export default function AdminDashboard() {
     return (
         <AdminLayout>
             <div className="p-8">
-                <div className="flex justify-between items-center mb-8">
-                    <div>
-                        <h1 className="text-3xl font-bold text-foreground">Contacts</h1>
-                        <p className="text-muted-foreground">Manage and view all contact form submissions.</p>
+                <Tabs defaultValue="contacts" className="w-full">
+                    <div className="flex justify-between items-center mb-8">
+                        <div>
+                            <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>
+                            <p className="text-muted-foreground">Manage your website content and inquiries.</p>
+                        </div>
+                        <TabsList>
+                            <TabsTrigger value="contacts" className="flex items-center gap-2">
+                                <Users className="w-4 h-4" /> Contacts
+                            </TabsTrigger>
+                            <TabsTrigger value="jobs" className="flex items-center gap-2">
+                                <Briefcase className="w-4 h-4" /> Careers
+                            </TabsTrigger>
+                            <TabsTrigger value="forms" className="flex items-center gap-2">
+                                <FileText className="w-4 h-4" /> Form Builder
+                            </TabsTrigger>
+                        </TabsList>
                     </div>
-                    <div className="flex gap-4">
-                        <Button variant="outline" onClick={fetchContacts}>
-                            <RefreshCw className={`w-4 h-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
-                            Refresh
-                        </Button>
-                        <Button onClick={exportToCSV}>
-                            <Download className="w-4 h-4 mr-2" />
-                            Export to Excel
-                        </Button>
-                    </div>
-                </div>
 
-                <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
-                    <div className="overflow-x-auto">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead className="w-[120px]">Date</TableHead>
-                                    <TableHead className="w-[180px]">Name</TableHead>
-                                    <TableHead className="w-[220px]">Email</TableHead>
-                                    <TableHead className="w-[200px]">Subject</TableHead>
-                                    <TableHead>Message</TableHead>
-                                    <TableHead className="text-right">Actions</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {loading ? (
-                                    <TableRow>
-                                        <TableCell colSpan={6} className="h-24 text-center">Loading...</TableCell>
-                                    </TableRow>
-                                ) : contacts.length === 0 ? (
-                                    <TableRow>
-                                        <TableCell colSpan={6} className="h-24 text-center">No contacts found.</TableCell>
-                                    </TableRow>
-                                ) : (
-                                    contacts.map((contact) => (
-                                        <TableRow key={contact._id} className="hover:bg-muted/50">
-                                            <TableCell className="font-medium whitespace-nowrap">
-                                                {new Date(contact.createdAt).toLocaleDateString()}
-                                            </TableCell>
-                                            <TableCell className="font-semibold">{contact.name}</TableCell>
-                                            <TableCell>{contact.email}</TableCell>
-                                            <TableCell>{contact.subject}</TableCell>
-                                            <TableCell className="max-w-md truncate" title={contact.message}>
-                                                {contact.message}
-                                            </TableCell>
-                                            <TableCell className="text-right">
-                                                <div className="flex justify-end gap-2">
-                                                    <Button
-                                                        variant="ghost"
-                                                        size="icon"
-                                                        onClick={() => openEmailModal(contact)}
-                                                        title="Send Custom Email"
-                                                    >
-                                                        <Mail className="w-4 h-4 text-blue-500" />
-                                                    </Button>
-                                                    <Button
-                                                        variant="ghost"
-                                                        size="icon"
-                                                        onClick={() => handleResendWelcome(contact)}
-                                                        disabled={actionLoading === contact._id}
-                                                        title="Resend Welcome Email"
-                                                    >
-                                                        <RefreshCw className={`w-4 h-4 text-green-500 ${actionLoading === contact._id ? 'animate-spin' : ''}`} />
-                                                    </Button>
-                                                    <Button
-                                                        variant="ghost"
-                                                        size="icon"
-                                                        onClick={() => handleDelete(contact._id)}
-                                                        disabled={actionLoading === contact._id}
-                                                        title="Delete Contact"
-                                                    >
-                                                        <Trash2 className="w-4 h-4 text-red-500" />
-                                                    </Button>
-                                                </div>
-                                            </TableCell>
+                    <TabsContent value="contacts">
+                        <div className="flex justify-end mb-4 gap-4">
+                            <Button variant="outline" onClick={fetchContacts}>
+                                <RefreshCw className={`w-4 h-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+                                Refresh
+                            </Button>
+                            <Button onClick={exportToCSV}>
+                                <Download className="w-4 h-4 mr-2" />
+                                Export to Excel
+                            </Button>
+                        </div>
+
+                        <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+                            <div className="overflow-x-auto">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead className="w-[120px]">Date</TableHead>
+                                            <TableHead className="w-[180px]">Name</TableHead>
+                                            <TableHead className="w-[220px]">Email</TableHead>
+                                            <TableHead className="w-[200px]">Subject</TableHead>
+                                            <TableHead>Message</TableHead>
+                                            <TableHead className="text-right">Actions</TableHead>
                                         </TableRow>
-                                    ))
-                                )}
-                            </TableBody>
-                        </Table>
-                    </div>
-                </div>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {loading ? (
+                                            <TableRow>
+                                                <TableCell colSpan={6} className="h-24 text-center">Loading...</TableCell>
+                                            </TableRow>
+                                        ) : contacts.length === 0 ? (
+                                            <TableRow>
+                                                <TableCell colSpan={6} className="h-24 text-center">No contacts found.</TableCell>
+                                            </TableRow>
+                                        ) : (
+                                            contacts.map((contact) => (
+                                                <TableRow key={contact._id} className="hover:bg-muted/50">
+                                                    <TableCell className="font-medium whitespace-nowrap">
+                                                        {new Date(contact.createdAt).toLocaleDateString()}
+                                                    </TableCell>
+                                                    <TableCell className="font-semibold">{contact.name}</TableCell>
+                                                    <TableCell>{contact.email}</TableCell>
+                                                    <TableCell>{contact.subject}</TableCell>
+                                                    <TableCell className="max-w-md truncate" title={contact.message}>
+                                                        {contact.message}
+                                                    </TableCell>
+                                                    <TableCell className="text-right">
+                                                        <div className="flex justify-end gap-2">
+                                                            <Button
+                                                                variant="ghost"
+                                                                size="icon"
+                                                                onClick={() => openEmailModal(contact)}
+                                                                title="Send Custom Email"
+                                                            >
+                                                                <Mail className="w-4 h-4 text-blue-500" />
+                                                            </Button>
+                                                            <Button
+                                                                variant="ghost"
+                                                                size="icon"
+                                                                onClick={() => handleResendWelcome(contact)}
+                                                                disabled={actionLoading === contact._id}
+                                                                title="Resend Welcome Email"
+                                                            >
+                                                                <RefreshCw className={`w-4 h-4 text-green-500 ${actionLoading === contact._id ? 'animate-spin' : ''}`} />
+                                                            </Button>
+                                                            <Button
+                                                                variant="ghost"
+                                                                size="icon"
+                                                                onClick={() => handleDelete(contact._id)}
+                                                                disabled={actionLoading === contact._id}
+                                                                title="Delete Contact"
+                                                            >
+                                                                <Trash2 className="w-4 h-4 text-red-500" />
+                                                            </Button>
+                                                        </div>
+                                                    </TableCell>
+                                                </TableRow>
+                                            ))
+                                        )}
+                                    </TableBody>
+                                </Table>
+                            </div>
+                        </div>
+                    </TabsContent>
+
+                    <TabsContent value="jobs">
+                        <JobManager />
+                    </TabsContent>
+
+                    <TabsContent value="forms">
+                        <FormBuilder />
+                    </TabsContent>
+                </Tabs>
             </div>
 
             {/* Custom Email Modal */}
