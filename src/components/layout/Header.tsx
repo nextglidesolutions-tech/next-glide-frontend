@@ -24,13 +24,13 @@ export function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-1.0">
             <img
               src="/logo trasanparent.png"
               alt="NextGlide Solutions"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
+            <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
               NextGlide
             </span>
           </Link>

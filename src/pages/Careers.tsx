@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Briefcase, MapPin, Clock, TrendingUp, Users, Award, Heart, Zap } from 'lucide-react';
+import { ArrowRight, Briefcase, MapPin, Clock, TrendingUp, Users, Award, Heart, Zap, MessageSquare } from 'lucide-react';
+import { QuickContactModal } from '@/components/shared/QuickContactModal';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -51,6 +52,7 @@ interface Field {
 }
 
 export default function Careers() {
+  const [modalOpen, setModalOpen] = useState(false);
   const [jobs, setJobs] = useState<Job[]>([]);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [formFields, setFormFields] = useState<Field[]>([]);
@@ -267,18 +269,32 @@ export default function Careers() {
               We're always looking for talented individuals. Send us your resume
               and we'll reach out when a matching opportunity arises.
             </p>
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="hero" size="lg" onClick={() => window.open('https://wa.me/7671972625?text=Hey%20hi%20i%20want%20to%20apply%20for%20a%20job!', '_blank')}>
+                <MessageSquare className="w-5 h-5 mr-2" />
+                Chat on WhatsApp
+              </Button>
+              <Button variant="heroOutline" size="lg" onClick={() => setModalOpen(true)}>
                 Submit Your Resume
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
+      <QuickContactModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        source="Careers Page"
+        isCareers={true}
+        title="Submit Your Resume"
+      />
+
+
       {/* Application Form Modal */}
-      <Dialog open={!!selectedJob} onOpenChange={(open) => !open && setSelectedJob(null)}>
+      < Dialog open={!!selectedJob
+      } onOpenChange={(open) => !open && setSelectedJob(null)}>
         <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Apply for {selectedJob?.title}</DialogTitle>
@@ -329,7 +345,7 @@ export default function Careers() {
             </form>
           )}
         </DialogContent>
-      </Dialog>
-    </Layout>
+      </Dialog >
+    </Layout >
   );
 }

@@ -128,13 +128,7 @@ export function SolutionsPreview() {
                   )}
 
                   {/* Footer (Price & Button) */}
-                  <div className="mt-auto w-full pt-4 flex items-center justify-between border-t border-gray-200">
-                    {solution.startingPrice ? (
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wide">Starting At</span>
-                        <span className="text-sm font-bold text-gray-900">{solution.startingPrice}</span>
-                      </div>
-                    ) : <div></div>}
+                  <div className="mt-auto w-full pt-4 flex items-center justify-end border-t border-gray-200">
 
                     <Link
                       to={`/solutions/${solution.slug}`}

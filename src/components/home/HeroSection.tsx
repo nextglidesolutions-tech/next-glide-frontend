@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const trustBadges = [
-  'ServiceNow Elite Partner',
-  '500+ Implementations',
-  '50+ Enterprise Clients',
-  '99% Customer Satisfaction',
+  'Innovation-First Mindset',
+  'Built for Growing Businesses',
+  'Flexible Engagement Models',
+  'Trusted Technology Partner',
 ];
+
 
 export function HeroSection() {
   return (
@@ -42,12 +43,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-primary text-sm font-medium">
-                Trusted ServiceNow Partner
-              </span>
-            </div>
+            
 
             <h1 className="heading-1 text-primary mb-6 animate-fade-up delay-100">
               Transform Your Enterprise with{' '}
@@ -92,11 +88,11 @@ export function HeroSection() {
               <div className="bg-card rounded-2xl border border-border p-8 shadow-elevated">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-primary/5 rounded-xl p-4 border border-primary/10">
-                    <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                    <div className="text-3xl font-bold text-primary mb-1">10+</div>
                     <div className="text-sm text-muted-foreground">Implementations</div>
                   </div>
                   <div className="bg-primary/5 rounded-xl p-4 border border-primary/10">
-                    <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                    <div className="text-3xl font-bold text-primary mb-1">10+</div>
                     <div className="text-sm text-muted-foreground">Enterprise Clients</div>
                   </div>
                   <div className="bg-primary/5 rounded-xl p-4 border border-primary/10">

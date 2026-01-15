@@ -18,7 +18,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Download, RefreshCw, Trash2, Mail, Send, Users, Briefcase, FileText } from 'lucide-react';
+import { Download, RefreshCw, Trash2, Mail, Send, Users, Briefcase, FileText, ExternalLink } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -225,6 +225,9 @@ export default function AdminDashboard() {
                             <TabsTrigger value="forms" className="flex items-center gap-2">
                                 <FileText className="w-4 h-4" /> Form Builder
                             </TabsTrigger>
+                            <TabsTrigger value="forms" className="flex items-center gap-2">
+                                <FileText className="w-4 h-4" /> Form Builder
+                            </TabsTrigger>
                         </TabsList>
                     </div>
 
@@ -315,6 +318,10 @@ export default function AdminDashboard() {
 
                     <TabsContent value="jobs">
                         <JobManager />
+                    </TabsContent>
+
+                    <TabsContent value="forms">
+                        <FormBuilder />
                     </TabsContent>
 
                     <TabsContent value="forms">

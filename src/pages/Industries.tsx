@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, GraduationCap, Zap, Building2, Landmark, Heart, Factory, ShoppingCart, Radio, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, GraduationCap, Zap, Building2, Landmark, Heart, Factory, ShoppingCart, Radio, MessageSquare } from 'lucide-react';
+import { QuickContactModal } from '@/components/shared/QuickContactModal';
 
 const industries = [
   {
@@ -63,6 +65,8 @@ const industries = [
 ];
 
 export default function Industries() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -79,8 +83,8 @@ export default function Industries() {
               Trusted Across Global Industries
             </h1>
             <p className="body-large text-primary-foreground/80">
-              We deliver tailored ServiceNow solutions for diverse sectors, 
-              understanding the unique challenges, regulations, and compliance 
+              We deliver tailored ServiceNow solutions for diverse sectors,
+              understanding the unique challenges, regulations, and compliance
               requirements of each industry.
             </p>
           </div>
@@ -103,7 +107,7 @@ export default function Industries() {
                   <div className="flex-1">
                     <h3 className="heading-4 text-foreground mb-3">{industry.title}</h3>
                     <p className="text-muted-foreground mb-4">{industry.description}</p>
-                    
+
                     <div className="bg-muted/50 rounded-xl p-4 mb-4">
                       <h4 className="text-sm font-semibold text-foreground mb-2">Business Impact</h4>
                       <p className="text-sm text-muted-foreground">{industry.impact}</p>
@@ -135,18 +139,28 @@ export default function Industries() {
               Industry-Specific Solutions
             </h2>
             <p className="body-text max-w-2xl mx-auto mb-8">
-              Our industry experts understand your unique challenges. Let's discuss 
+              Our industry experts understand your unique challenges. Let's discuss
               how ServiceNow can transform your operations.
             </p>
-            <Button variant="accent" size="lg" asChild>
-              <Link to="/contact">
-                Talk to an Industry Expert
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="accent" size="lg" onClick={() => window.open('https://wa.me/7671972625?text=Hey%20hi%20i%20want%20to%20more%20about%20your%20industry%20solutions!', '_blank')}>
+                <MessageSquare className="w-5 h-5 mr-2" />
+                Chat on WhatsApp
+              </Button>
+              <Button variant="outline" size="lg" onClick={() => setModalOpen(true)}>
+                <ArrowRight className="w-5 h-5 mr-2" />
+                Talk to an Expert
+              </Button>
+            </div>
           </div>
         </div>
       </section>
+
+      <QuickContactModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        source="Industries Page"
+      />
     </Layout>
   );
 }

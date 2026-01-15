@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { LogOut, LayoutDashboard, Briefcase, Menu, X, ChevronLeft, ChevronRight, FileText, Inbox } from 'lucide-react';
+import { LogOut, LayoutDashboard, Briefcase, Menu, X, ChevronLeft, ChevronRight, FileText, Inbox, Users } from 'lucide-react';
 
 interface AdminLayoutProps {
     children: React.ReactNode;
@@ -26,7 +26,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     };
 
     const navItems = [
-        { path: '/admin/dashboard', label: 'Contacts', icon: LayoutDashboard },
+        { path: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { path: '/admin/all-contacts', label: 'All Contacts', icon: Users },
         { path: '/admin/services', label: 'Services', icon: Briefcase },
         { path: '/admin/service-forms', label: 'Service Forms', icon: FileText },
         { path: '/admin/applications', label: 'Applications', icon: Inbox },

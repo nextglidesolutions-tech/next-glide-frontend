@@ -131,7 +131,7 @@ export default function Services() {
               to meet your unique business requirements. Let's discuss your needs.
             </p>
             <Button variant="accent" size="lg" asChild>
-              <Link to="/contact">
+              <Link to="/contact#contact-form">
                 Talk to an Expert
                 <ArrowRight className="w-4 h-4" />
               </Link>

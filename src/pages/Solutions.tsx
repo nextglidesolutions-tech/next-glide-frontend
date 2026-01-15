@@ -178,7 +178,7 @@ export default function Solutions() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="accent" size="lg" asChild>
-                  <Link to="/contact">
+                  <Link to="/contact#contact-form">
                     Request a Demo
                     <ArrowRight className="w-4 h-4" />
                   </Link>

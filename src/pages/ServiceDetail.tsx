@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
+import { QuickContactModal } from '@/components/shared/QuickContactModal';
 import {
     Dialog,
     DialogContent,
@@ -22,7 +23,8 @@ import {
     ShieldCheck,
     Quote,
     Award,
-    Code
+    Code,
+    MessageSquare
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -30,6 +32,7 @@ export default function ServiceDetail() {
     const { slug } = useParams();
     const [service, setService] = useState<any>(null);
     const [loading, setLoading] = useState(true);
+    const [modalOpen, setModalOpen] = useState(false);
     const [isApplyOpen, setIsApplyOpen] = useState(false);
     const [applyLoading, setApplyLoading] = useState(false);
 
@@ -140,17 +143,21 @@ export default function ServiceDetail() {
                             {service.shortDescription}
                         </p>
                         <div className="flex gap-4">
-                            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => setIsApplyOpen(true)}>
+                            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => window.open('https://wa.me/7671972625?text=Hey%20hi%20i%20want%20to%20more%20about%20your%20service!', '_blank')}>
+                                <MessageSquare className="w-5 h-5 mr-2" />
+                                Chat on WhatsApp
+                            </Button>
+                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" onClick={() => setModalOpen(true)}>
                                 {service.ctaText || 'Apply Now'}
                             </Button>
-                            {service.consultationAvailability && (
-                                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" asChild>
-                                    <Link to="/contact">Book Free Consultation</Link>
-                                </Button>
-                            )}
                         </div>
                     </div>
                 </div>
+                <QuickContactModal
+                    open={modalOpen}
+                    onOpenChange={setModalOpen}
+                    source={`Service: ${service?.name || 'Detail'}`}
+                />
             </section>
 
             {/* OVERVIEW & PROBLEM SOLVING */}
@@ -481,14 +488,12 @@ export default function ServiceDetail() {
                         {service.nextSteps || "Take the next step. Our team is ready to help you implement this solution."}
                     </p>
                     <div className="flex gap-4 justify-center">
-                        <Button size="lg" className="text-lg px-8" onClick={() => setIsApplyOpen(true)}>
+                        <Button size="lg" className="text-lg px-8" onClick={() => window.open('https://wa.me/7671972625?text=Hey%20hi%20i%20want%20to%20more%20about%20your%20service!', '_blank')}>
+                            <MessageSquare className="w-5 h-5 mr-2" /> Chat on WhatsApp
+                        </Button>
+                        <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => setModalOpen(true)}>
                             {service.ctaText || 'Apply Now'} <ArrowRight className="ml-2" />
                         </Button>
-                        {service.secondaryCta && (
-                            <Button size="lg" variant="outline" className="text-lg px-8">
-                                {service.secondaryCta}
-                            </Button>
-                        )}
                     </div>
                 </div>
             </section>}

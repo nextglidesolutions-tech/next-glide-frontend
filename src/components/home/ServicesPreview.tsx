@@ -47,7 +47,7 @@ export function ServicesPreview() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-700 font-bold text-xs uppercase tracking-wider mb-3 border border-purple-200">
+          <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-xs uppercase tracking-wider mb-3 border border-blue-100">
             Our Services
           </span>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -62,7 +62,7 @@ export function ServicesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
           {loading ? (
             <div className="col-span-full flex justify-center py-10">
-              <Loader2 className="w-8 h-8 animate-spin text-purple-600" />
+              <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
             </div>
           ) : services.length === 0 ? (
             <div className="col-span-full text-center text-gray-500 py-10">
@@ -75,11 +75,11 @@ export function ServicesPreview() {
               return (
                 <div
                   key={service._id || service.slug}
-                  className="group bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:shadow-purple-100/50 transition-all duration-300 flex flex-col items-start h-full"
+                  className="group bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300 flex flex-col items-start h-full"
                 >
                   {/* Top Row: Icon & Category */}
                   <div className="flex items-start justify-between w-full mb-5">
-                    <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="inline-block px-2.5 py-1 rounded-md text-[10px] uppercase font-bold bg-gray-50 text-gray-600 tracking-wider border border-gray-100">
@@ -88,7 +88,7 @@ export function ServicesPreview() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">
                     <Link to={`/services/${service.slug}`}>
                       {service.name}
                     </Link>
@@ -110,19 +110,12 @@ export function ServicesPreview() {
                   )}
 
                   {/* Footer (Price & Button) */}
-                  <div className="mt-auto w-full pt-4 flex items-center justify-between border-t border-gray-50">
-                    {service.startingPrice ? (
-                      <div className="flex flex-col">
-                        <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wide">Starts From</span>
-                        <span className="text-sm font-bold text-gray-900">{service.startingPrice}</span>
-                      </div>
-                    ) : <div></div>}
-
+                  <div className="mt-auto w-full pt-4 flex items-center justify-end border-t border-gray-50">
                     <Link
                       to={`/services/${service.slug}`}
-                      className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-purple-600 text-white font-bold text-sm tracking-wide hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-200 active:scale-95"
+                      className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white border-2 border-green-500 text-green-600 font-bold text-sm tracking-wide hover:bg-green-50 transition-all shadow-sm hover:shadow-md active:scale-95"
                     >
-                      {service.ctaText || 'View Service'} <ArrowRight className="w-4 h-4 ml-2" />
+                      {service.ctaText || 'Read More'} <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </div>
                 </div>
@@ -133,7 +126,7 @@ export function ServicesPreview() {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 font-medium hover:bg-purple-50" asChild>
+          <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700 font-medium hover:bg-blue-50" asChild>
             <Link to="/services">
               View All Services
               <ArrowRight className="w-4 h-4 ml-1" />
