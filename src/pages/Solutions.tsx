@@ -130,7 +130,7 @@ export default function Solutions() {
                           </p>
                         </div>
                         <Button variant="accentOutline" size="sm" asChild className="self-start">
-                          <Link to={`/solutions/${solution.slug}`}>
+                          <Link to={`/solutions/${solution.slug}`} data-id={solution.ctaText || solution._id}>
                             Learn More
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>

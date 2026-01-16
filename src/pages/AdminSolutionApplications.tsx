@@ -287,6 +287,9 @@ export default function AdminSolutionApplications() {
                                 <div>
                                     <Label className="text-xs text-muted-foreground uppercase">Solution</Label>
                                     <div className="font-bold text-lg text-blue-700">{selectedInquiry.solutionName}</div>
+                                    {selectedInquiry.ctaText && (
+                                        <div className="text-xs text-muted-foreground mt-1">Via CTA: {selectedInquiry.ctaText}</div>
+                                    )}
                                 </div>
                                 <div>
                                     <Label className="text-xs text-muted-foreground uppercase">Date</Label>

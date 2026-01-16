@@ -101,6 +101,7 @@ export default function SolutionDetail() {
                     ...formData,
                     solutionId: solution._id,
                     solutionName: solution.name,
+                    ctaText: solution.ctaText,
                     customResponses
                 }),
             });
