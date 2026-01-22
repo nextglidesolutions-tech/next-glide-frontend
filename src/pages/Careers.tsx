@@ -142,12 +142,12 @@ export default function Careers() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute bottom-10 left-20 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Careers
             </span>
@@ -163,7 +163,7 @@ export default function Careers() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -196,7 +196,7 @@ export default function Careers() {
       </section>
 
       {/* Open Positions */}
-      <section className="section-padding bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -258,7 +258,7 @@ export default function Careers() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="bg-primary rounded-2xl p-12 text-center">
             <Zap className="w-12 h-12 text-accent mx-auto mb-6" />

@@ -46,12 +46,12 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Our Services
             </span>
@@ -68,7 +68,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           {loading ? (
             <div className="flex justify-center py-20">
@@ -98,11 +98,11 @@ export default function Services() {
                       <p className="text-muted-foreground line-clamp-3">
                         {service.shortDescription}
                       </p>
-                      {service.startingPrice && (
+                      {/* {service.startingPrice && (
                         <p className="mt-4 text-sm font-medium text-foreground">
                           Starts from <span className="text-accent">{service.startingPrice}</span>
                         </p>
-                      )}
+                      )} */}
                     </CardContent>
                     <CardFooter>
                       <Button className="w-full" variant="outline" asChild>
@@ -120,7 +120,7 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container-custom">
           <div className="bg-card rounded-2xl p-12 shadow-elevated border border-border text-center">
             <h2 className="heading-3 text-foreground mb-4">

@@ -79,17 +79,23 @@ const App = () => (
               "Enables faster root-cause analysis"
             ]}
           />} />
-          <Route path="/itbm" element={<DirectContentPage
-            title="ITBM – IT Business Management"
-            subtitle="IT Business Management"
-            benefits={[
-              "Aligns IT spend with business value",
-              "Improves financial transparency of IT services",
-              "Enables cost optimization and budget control",
-              "Supports data-driven investment decisions",
-              "Measures ROI of IT initiatives"
-            ]}
-          />} />
+        <Route
+  path="/spm"
+  element={
+    <DirectContentPage
+      title="SPM – Strategic Portfolio Management"
+      subtitle="Strategic Portfolio Management"
+      benefits={[
+        "Aligns business strategy with execution and delivery",
+        "Provides end-to-end visibility into portfolios, programs, and projects",
+        "Improves prioritization of initiatives based on business value",
+        "Enables effective demand and capacity management",
+        "Tracks progress, outcomes, and value realization of investments"
+      ]}
+    />
+  }
+/>
+
           <Route path="/csm" element={<DirectContentPage
             title="CSM – Customer Service Management"
             subtitle="Customer Service Management"

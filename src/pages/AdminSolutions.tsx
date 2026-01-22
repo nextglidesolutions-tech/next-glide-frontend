@@ -78,10 +78,13 @@ export default function AdminSolutions() {
             const method = view === 'create' ? 'POST' : 'PUT';
             const url = view === 'create' ? `${apiUrl}/api/solutions` : `${apiUrl}/api/solutions/${formData._id}`;
 
+            // Force default pricing
+            const submissionData = { ...formData, startingPrice: '1 Lakh' };
+
             const response = await fetch(url, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(submissionData),
             });
 
             if (response.ok) {
@@ -279,7 +282,7 @@ export default function AdminSolutions() {
                                 <TableRow>
                                     <TableHead>Solution Name</TableHead>
                                     <TableHead>Category</TableHead>
-                                    <TableHead>Price From</TableHead>
+                                    {/* <TableHead>Price From</TableHead> */}
                                     <TableHead className="text-right">Actions</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -288,7 +291,7 @@ export default function AdminSolutions() {
                                     <TableRow key={sol._id}>
                                         <TableCell className="font-semibold">{sol.name}</TableCell>
                                         <TableCell>{sol.category}</TableCell>
-                                        <TableCell>{sol.startingPrice}</TableCell>
+                                        {/* <TableCell>{sol.startingPrice}</TableCell> */}
                                         <TableCell className="text-right">
                                             <Button variant="ghost" size="icon" onClick={() => handleEditClick(sol)}>
                                                 <Pencil className="w-4 h-4 text-blue-500" />
@@ -350,7 +353,7 @@ export default function AdminSolutions() {
                                     {renderField('Short Description *', 'shortDescription', 'textarea')}
                                     <div className="grid grid-cols-2 gap-4">
                                         {renderField('Category', 'category')}
-                                        {renderField('Starting Price', 'startingPrice')}
+                                        {/* {renderField('Starting Price', 'startingPrice')} */}
                                     </div>
                                     {renderField('Call To Action Text', 'ctaText', 'text', 'Appy Now')}
                                 </div>
@@ -670,9 +673,9 @@ export default function AdminSolutions() {
                             <p className="text-sm text-gray-500 mb-4 line-clamp-3">
                                 {formData.shortDescription || 'Short description will appear here...'}
                             </p>
-                            <div className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">
+                            {/* <div className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">
                                 From {formData.startingPrice || '$XXX'}
-                            </div>
+                            </div> */}
                             <Button className="w-full" variant="outline">
                                 {formData.ctaText || 'Learn More'} <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>

@@ -70,12 +70,12 @@ export default function Industries() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-20 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Industries
             </span>
@@ -92,7 +92,7 @@ export default function Industries() {
       </section>
 
       {/* Industries Grid */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {industries.map((industry, index) => (
@@ -132,7 +132,7 @@ export default function Industries() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container-custom">
           <div className="bg-card rounded-2xl p-12 shadow-elevated border border-border text-center">
             <h2 className="heading-3 text-foreground mb-4">

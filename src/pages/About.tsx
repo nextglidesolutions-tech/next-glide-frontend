@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Eye, Award, Users, Globe, CheckCircle2 } from 'lucide-react';
 
 const stats = [
-  { value: '500+', label: 'Successful Implementations' },
-  { value: '50+', label: 'Enterprise Clients' },
-  { value: '200+', label: 'Certified Experts' },
-  { value: '15+', label: 'Years Experience' },
+  { value: '10+', label: 'Successful Implementations' },
+  { value: '10+', label: 'Enterprise Clients' },
+  { value: '15+', label: 'Certified Experts' },
+  { value: '2+', label: 'Years Experience' },
 ];
 
 const values = [
@@ -37,12 +37,12 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               About Us
             </span>
@@ -50,8 +50,8 @@ export default function About() {
               Your Trusted ServiceNow Partner
             </h1>
             <p className="body-large text-primary-foreground/80">
-              NextGlide Solutions Private Limited is a premier ServiceNow consulting 
-              partner, delivering enterprise digital transformation solutions to 
+              NextGlide Solutions Private Limited is a premier ServiceNow consulting
+              partner, delivering enterprise digital transformation solutions to
               global organizations across industries.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-card rounded-2xl p-8 shadow-card border border-border">
@@ -82,9 +82,9 @@ export default function About() {
               </div>
               <h3 className="heading-3 text-foreground mb-4">Our Mission</h3>
               <p className="body-text">
-                To empower enterprises with innovative ServiceNow solutions that 
-                streamline operations, enhance productivity, and accelerate digital 
-                transformation, enabling our clients to achieve sustainable competitive 
+                To empower enterprises with innovative ServiceNow solutions that
+                streamline operations, enhance productivity, and accelerate digital
+                transformation, enabling our clients to achieve sustainable competitive
                 advantage in an ever-evolving business landscape.
               </p>
             </div>
@@ -94,9 +94,9 @@ export default function About() {
               </div>
               <h3 className="heading-3 text-foreground mb-4">Our Vision</h3>
               <p className="body-text">
-                To be the global leader in ServiceNow consulting, recognized for 
-                delivering exceptional value, fostering innovation, and building 
-                lasting partnerships that drive enterprise success across industries 
+                To be the global leader in ServiceNow consulting, recognized for
+                delivering exceptional value, fostering innovation, and building
+                lasting partnerships that drive enterprise success across industries
                 and geographies.
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -130,7 +130,7 @@ export default function About() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -141,8 +141,8 @@ export default function About() {
                 Enterprise-Grade Expertise You Can Trust
               </h2>
               <p className="body-large mb-8">
-                With a team of certified ServiceNow professionals and a proven 
-                track record across Fortune 500 companies, we deliver solutions 
+                With a team of certified ServiceNow professionals and a proven
+                track record across Fortune 500 companies, we deliver solutions
                 that scale.
               </p>
               <ul className="space-y-4 mb-8">
@@ -182,8 +182,8 @@ export default function About() {
                     <div className="text-sm text-muted-foreground">Client Rating</div>
                   </div>
                   <div className="bg-muted rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-foreground mb-1">100+</div>
-                    <div className="text-sm text-muted-foreground">Certifications</div>
+                    <div className="text-3xl font-bold text-foreground mb-1">100%</div>
+                    <div className="text-sm text-muted-foreground">Trusted by Clients</div>
                   </div>
                 </div>
               </div>

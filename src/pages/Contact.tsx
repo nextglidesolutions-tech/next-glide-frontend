@@ -5,25 +5,26 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, MessageSquare, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import Chatbot from '@/components/shared/Chatbot';
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: 'info@nextglide.com',
+    details: 'info@nextglidesolutions.com',
     description: 'Get a response within 24 hours',
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: '+1 (234) 567-890',
+    details: '+91 7671972625',
     description: 'Mon-Fri from 9am to 6pm',
   },
   {
     icon: MapPin,
     title: 'Visit Us',
     details: 'Global Offices',
-    description: 'USA • UK • India • Singapore',
+    description: 'USA • UK • India',
   },
 ];
 
@@ -31,6 +32,7 @@ export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -101,12 +103,12 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Contact Us
             </span>
@@ -145,7 +147,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form" className="section-padding bg-background">
+      <section id="contact-form" className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Form */}
@@ -272,7 +274,10 @@ export default function Contact() {
               <div className="bg-card rounded-2xl p-8 shadow-card border border-border mb-8">
                 <h3 className="heading-4 text-foreground mb-4">Quick Actions</h3>
                 <div className="space-y-4">
-                  <button className="w-full flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-accent/10 hover:border-accent border border-transparent transition-all text-left group">
+                  <button
+                    onClick={() => window.open('https://api.whatsapp.com/send/?phone=7671972625&text=Hey+hi+i+want+to+more+about+your+solution%21&type=phone_number&app_absent=0', '_blank')}
+                    className="w-full flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-accent/10 hover:border-accent border border-transparent transition-all text-left group"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
                       <MessageSquare className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                     </div>
@@ -282,13 +287,16 @@ export default function Contact() {
                     </div>
                   </button>
 
-                  <button className="w-full flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-accent/10 hover:border-accent border border-transparent transition-all text-left group">
+                  <button
+                    onClick={() => setIsChatOpen(true)}
+                    className="w-full flex items-center gap-4 p-4 rounded-xl bg-muted/50 hover:bg-accent/10 hover:border-accent border border-transparent transition-all text-left group"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
-                      <Calendar className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                      <MessageSquare className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">Request a Demo</div>
-                      <div className="text-sm text-muted-foreground">See our solutions in action</div>
+                      <div className="font-semibold text-foreground">Chat with AI Assistant</div>
+                      <div className="text-sm text-muted-foreground">Ask questions instantly</div>
                     </div>
                   </button>
                 </div>
@@ -314,6 +322,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      <Chatbot isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
     </Layout>
   );
 }

@@ -17,8 +17,10 @@ import {
   Lightbulb,
   Globe,
   Code,
-  Rocket
+  Rocket,
+  MessageSquare
 } from 'lucide-react';
+import Chatbot from '@/components/shared/Chatbot';
 
 const iconMap: Record<string, any> = {
   'ITSM': Monitor,
@@ -39,6 +41,7 @@ const iconMap: Record<string, any> = {
 export default function Solutions() {
   const [solutions, setSolutions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const fetchSolutions = async () => {
@@ -67,12 +70,12 @@ export default function Solutions() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+      <section className="pt-32 pb-10 hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute bottom-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
         </div>
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
               ServiceNow Solutions
             </span>
@@ -89,7 +92,7 @@ export default function Solutions() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           {loading ? (
             <div className="flex justify-center py-20">
@@ -162,7 +165,7 @@ export default function Solutions() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container-custom">
           <div className="bg-card rounded-2xl p-12 shadow-elevated border border-border text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
@@ -177,11 +180,9 @@ export default function Solutions() {
                 to transform your enterprise operations.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="accent" size="lg" asChild>
-                  <Link to="/contact#contact-form">
-                    Request a Demo
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                <Button variant="accent" size="lg" onClick={() => setIsChatOpen(true)}>
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Chat with AI Assistant
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <Link to="/services">
@@ -193,6 +194,8 @@ export default function Solutions() {
           </div>
         </div>
       </section>
+
+      <Chatbot isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
     </Layout>
   );
 }

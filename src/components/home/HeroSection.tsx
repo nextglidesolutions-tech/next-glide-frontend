@@ -45,12 +45,12 @@ export function HeroSection() {
           <div className="text-center lg:text-left">
             
 
-            <h1 className="heading-1 text-primary mb-6 animate-fade-up delay-100">
+            <h1 className="heading-2 text-primary mb-4 animate-fade-up delay-100">
               Transform Your Enterprise with{' '}
               <span className="text-accent">NextGlide</span>
             </h1>
 
-            <p className="body-large text-muted-foreground mb-8 max-w-xl animate-fade-up delay-200">
+            <p className="body-large text-muted-foreground mb-4 max-w-xl animate-fade-up delay-200">
               NextGlide Solutions delivers end-to-end ServiceNow implementations, 
               helping global enterprises streamline operations, enhance productivity, 
               and accelerate digital transformation.

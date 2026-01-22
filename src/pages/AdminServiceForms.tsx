@@ -170,7 +170,7 @@ export default function AdminServiceForms() {
                                 <TableRow>
                                     <TableHead>Service Name</TableHead>
                                     <TableHead>Category</TableHead>
-                                    <TableHead>Custom Questions</TableHead>
+                                    {/* <TableHead>Custom Questions</TableHead> */}
                                     <TableHead className="text-right">Action</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -179,12 +179,12 @@ export default function AdminServiceForms() {
                                     <TableRow key={svc._id} className="hover:bg-muted/50 cursor-pointer" onClick={() => handleServiceSelect(svc.slug)}>
                                         <TableCell className="font-semibold">{svc.name}</TableCell>
                                         <TableCell>{svc.category}</TableCell>
-                                        <TableCell>
+                                        {/* <TableCell>
                                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${svc.inquiryFormFields?.length > 0 ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
                                                 }`}>
                                                 {svc.inquiryFormFields?.length || 0} Fields
                                             </span>
-                                        </TableCell>
+                                        </TableCell> */}
                                         <TableCell className="text-right">
                                             <Button variant="ghost" size="sm" className="text-blue-600">
                                                 <Pencil className="w-4 h-4 mr-2" /> Configure

@@ -22,8 +22,27 @@ type Message = {
     content: string;
 };
 
-export default function Chatbot() {
-    const [isOpen, setIsOpen] = useState(false);
+interface ChatbotProps {
+    isOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
+}
+
+export default function Chatbot({ isOpen: controlledIsOpen, onOpenChange }: ChatbotProps) {
+    const [internalIsOpen, setInternalIsOpen] = useState(false);
+
+    // Determine the effective state
+    const isControlled = controlledIsOpen !== undefined;
+    const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
+
+    // Handler to update state
+    const handleOpenChange = (newState: boolean) => {
+        if (isControlled && onOpenChange) {
+            onOpenChange(newState);
+        } else {
+            setInternalIsOpen(newState);
+        }
+    };
+
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -149,7 +168,7 @@ Instructions:
             {/* Floating Action Button - Left Side */}
             <div className="fixed bottom-8 left-8 z-[100]">
                 <Button
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => handleOpenChange(!isOpen)}
                     className={cn(
                         "h-14 w-14 rounded-full shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-600 to-teal-500 hover:scale-105",
                         isOpen ? "rotate-90" : "animate-bounce-slow"

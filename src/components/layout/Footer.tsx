@@ -6,7 +6,7 @@ const footerLinks = {
   solutions: [
     { name: 'ITSM', href: '/itsm' },
     { name: 'ITOM', href: '/itom' },
-    { name: 'ITBM', href: '/itbm' },
+    { name: 'SPM', href: '/spm' },
     { name: 'CSM', href: '/csm' },
     { name: 'HRSD', href: '/hrsd' },
     { name: 'GRC', href: '/grc' },
@@ -56,17 +56,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center gap-0 mb-6">
+              <Link to="/" className="flex items-center gap-0">
                 <img
                   src="/logo trasanparent.png"
                   alt="NextGlide Solutions"
-                  className="h-14 w-auto object-contain brightness-0 invert"
+                  className="h-16 w-auto object-contain"
                 />
-                <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
-                  Next Glide
+                <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
+                  NextGlide
                 </span>
-              </div>
+              </Link>
             </div>
             <p className="font-semibold text-primary-foreground mb-2">NextGlide Solutions Private Limited</p>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
