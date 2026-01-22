@@ -165,6 +165,9 @@ export default function AdminServiceApplications() {
         ? inquiries
         : inquiries.filter(i => i.serviceId === selectedServiceId || i.serviceName === services.find(s => s._id === selectedServiceId)?.name);
 
+    const activeService = selectedServiceId !== 'all' ? services.find(s => s._id === selectedServiceId) : null;
+    const customFields = activeService?.inquiryFormFields?.filter((f: any) => f.isVisible !== false) || [];
+
     return (
         <AdminLayout>
             <div className="p-8 h-full flex flex-col">
@@ -211,6 +214,9 @@ export default function AdminServiceApplications() {
                                     <TableHead>Service</TableHead>
                                     <TableHead>Applicant</TableHead>
                                     <TableHead>Contact</TableHead>
+                                    {selectedServiceId !== 'all' && customFields.map((field: any, idx: number) => (
+                                        <TableHead key={idx} className="whitespace-nowrap">{field.label}</TableHead>
+                                    ))}
                                     <TableHead className="text-right">Actions</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -245,6 +251,14 @@ export default function AdminServiceApplications() {
                                             <div className="text-sm">{app.email}</div>
                                             <div className="text-xs text-muted-foreground">{app.phone}</div>
                                         </TableCell>
+                                        {selectedServiceId !== 'all' && customFields.map((field: any, idx: number) => {
+                                            const answer = app.customResponses?.find((r: any) => r.question === field.label)?.answer;
+                                            return (
+                                                <TableCell key={idx} className="max-w-[200px] truncate" title={answer || '-'}>
+                                                    {answer || '-'}
+                                                </TableCell>
+                                            );
+                                        })}
                                         <TableCell className="text-right">
                                             <div className="flex justify-end gap-2">
                                                 <Button variant="ghost" size="icon" title="View Details" onClick={() => { setSelectedInquiry(app); setIsDetailOpen(true); }}>

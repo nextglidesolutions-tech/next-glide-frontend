@@ -353,7 +353,7 @@ export default function AdminSolutions() {
                                     {renderField('Short Description *', 'shortDescription', 'textarea')}
                                     <div className="grid grid-cols-2 gap-4">
                                         {renderField('Category', 'category')}
-                                        {/* {renderField('Starting Price', 'startingPrice')} */}
+
                                     </div>
                                     {renderField('Call To Action Text', 'ctaText', 'text', 'Appy Now')}
                                 </div>
@@ -673,9 +673,7 @@ export default function AdminSolutions() {
                             <p className="text-sm text-gray-500 mb-4 line-clamp-3">
                                 {formData.shortDescription || 'Short description will appear here...'}
                             </p>
-                            {/* <div className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">
-                                From {formData.startingPrice || '$XXX'}
-                            </div> */}
+
                             <Button className="w-full" variant="outline">
                                 {formData.ctaText || 'Learn More'} <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>

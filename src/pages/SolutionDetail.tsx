@@ -189,7 +189,7 @@ export default function SolutionDetail() {
                                 <MessageSquare className="w-5 h-5 mr-2" />
                                 Chat on WhatsApp
                             </Button>
-                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" onClick={() => setModalOpen(true)}>
+                            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" onClick={() => setIsApplyOpen(true)}>
                                 {solution.ctaText || 'Get Started'} <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </div>
@@ -369,7 +369,7 @@ export default function SolutionDetail() {
                                 <Button className="w-full mb-3" size="lg" variant="accent" onClick={() => window.open('https://wa.me/7671972625?text=Hey%20hi%20i%20want%20to%20more%20about%20your%20solution!', '_blank')}>
                                     <MessageSquare className="w-4 h-4 mr-2" /> Chat on WhatsApp
                                 </Button>
-                                <Button className="w-full mb-3" size="lg" variant="outline" onClick={() => setModalOpen(true)}>
+                                <Button className="w-full mb-3" size="lg" variant="outline" onClick={() => setIsApplyOpen(true)}>
                                     {solution.ctaText || 'Get Started'}
                                 </Button>
                                 <p className="text-xs text-center text-muted-foreground">
@@ -463,8 +463,8 @@ export default function SolutionDetail() {
 
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label htmlFor="budget">Estimated Budget</Label>
-                                <Input id="budget" placeholder="e.g. $10k - $50k" value={formData.estimatedBudget} onChange={e => setFormData({ ...formData, estimatedBudget: e.target.value })} />
+                                <Label htmlFor="budget" className="hidden">Estimated Budget</Label>
+                                <Input id="budget" type="hidden" placeholder="e.g. $10k - $50k" value={formData.estimatedBudget} onChange={e => setFormData({ ...formData, estimatedBudget: e.target.value })} />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="source">How did you hear about us?</Label>
