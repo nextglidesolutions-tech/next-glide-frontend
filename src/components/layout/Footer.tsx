@@ -76,7 +76,11 @@ export function Footer() {
             <div className="space-y-3">
               <a href="mailto:info@nextglide.com" className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors">
                 <Mail className="w-5 h-5" />
-                info@nextglide.com
+                info@nextglidesolutions.com
+              </a>
+              <a href="tel:+917671972625" className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors">
+                <Phone className="w-5 h-5" />
+                +91 7671972625
               </a>
               <a href="tel:+917671972625" className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors">
                 <Phone className="w-5 h-5" />
@@ -85,9 +89,18 @@ export function Footer() {
               <div className="flex items-start gap-3 text-primary-foreground/70">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <span>
+                  CDB Architects,<br />
+                  Flat : 101, 1st Floor,<br />
+                  Sri Siri Eeshvatam Apartment,<br />
+                  Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />
+                  Kothaguda, Hyderabad 500084
+                </span>
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                <span>
                   8951 Cypress Waters Blvd Suite 160,<br />
                   Coppell, TX 75019
                 </span>
+
               </div>
             </div>
           </div>

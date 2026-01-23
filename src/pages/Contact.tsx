@@ -23,8 +23,18 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: 'Global Offices',
-    description: 'USA • UK • India',
+    details: (
+      <><>
+        CDB Architects, Flat : 101, 1st Floor,<br />
+        Sri Siri Eeshvatam Apartment,<br />
+        Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />
+        Kothaguda, Hyderabad 500084
+      </><>
+          8951 Cypress Waters Blvd Suite 160,<br />
+          Coppell, TX 75019
+        </></>
+    ),
+    description: 'Corporate Office',
   },
 ];
 
