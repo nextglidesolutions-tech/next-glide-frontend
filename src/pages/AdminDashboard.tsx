@@ -18,12 +18,13 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Download, RefreshCw, Trash2, Mail, Send, Users, Briefcase, FileText, ExternalLink } from 'lucide-react';
+import { Download, RefreshCw, Trash2, Mail, Send, Users, Briefcase, FileText, ExternalLink, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import JobManager from '@/components/admin/JobManager';
 import FormBuilder from '@/components/admin/FormBuilder';
+import ChatLogViewer from '@/components/admin/ChatLogViewer';
 
 interface Contact {
     _id: string;
@@ -225,8 +226,8 @@ export default function AdminDashboard() {
                             <TabsTrigger value="forms" className="flex items-center gap-2">
                                 <FileText className="w-4 h-4" /> Form Builder
                             </TabsTrigger>
-                            <TabsTrigger value="forms" className="flex items-center gap-2">
-                                <FileText className="w-4 h-4" /> Form Builder
+                            <TabsTrigger value="chatlogs" className="flex items-center gap-2">
+                                <MessageSquare className="w-4 h-4" /> Chatbot Q&A
                             </TabsTrigger>
                         </TabsList>
                     </div>
@@ -324,8 +325,8 @@ export default function AdminDashboard() {
                         <FormBuilder />
                     </TabsContent>
 
-                    <TabsContent value="forms">
-                        <FormBuilder />
+                    <TabsContent value="chatlogs">
+                        <ChatLogViewer />
                     </TabsContent>
                 </Tabs>
             </div>

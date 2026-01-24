@@ -140,6 +140,30 @@ Instructions:
                 { role: "assistant", content: botResponseContent },
             ]);
 
+            // Log to Backend
+            try {
+                const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+                console.log('Attempting to save chat log to:', `${apiUrl}/api/chat-logs`);
+
+                const response = await fetch(`${apiUrl}/api/chat-logs`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: input,
+                        answer: botResponseContent
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Failed to save chat log. Status:', response.status, 'Response:', errorText);
+                } else {
+                    console.log('Chat log saved successfully');
+                }
+            } catch (logError) {
+                console.error("Failed to log chat (Network/Fetch Error):", logError);
+            }
+
         } catch (error) {
             console.error("Groq API Error:", error);
             setMessages((prev) => [
