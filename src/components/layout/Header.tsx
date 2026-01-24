@@ -55,9 +55,9 @@ export function Header() {
             <img
               src="/logo trasanparent.png"
               alt="NextGlide Solutions"
-              className="h-16 w-auto object-contain"
+              className="h-[71px] w-auto object-contain"
             />
-            <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500">
+            <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500 -ml-4">
               NextGlide
             </span>
           </Link>

@@ -89,7 +89,6 @@ export function Footer() {
               <div className="flex items-start gap-3 text-primary-foreground/70">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <span>
-                  CDB Architects,<br />
                   Flat : 101, 1st Floor,<br />
                   Sri Siri Eeshvatam Apartment,<br />
                   Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />

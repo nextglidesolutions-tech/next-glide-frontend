@@ -9,32 +9,50 @@ import Chatbot from '@/components/shared/Chatbot';
 
 const contactInfo = [
   {
-    icon: Mail,
-    title: 'Email Us',
-    details: 'info@nextglidesolutions.com',
-    description: 'Get a response within 24 hours',
-  },
-  {
-    icon: Phone,
-    title: 'Call Us',
-    details: '+91 7671972625',
+    icon: MessageSquare,
+    title: 'Get in Touch',
+    details: (
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <Mail className="w-4 h-4 text-accent" />
+          <a href="mailto:info@nextglidesolutions.com" className="hover:text-accent transition-colors">
+            info@nextglidesolutions.com
+          </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <Phone className="w-4 h-4 text-accent" />
+          <a href="tel:+917671972625" className="hover:text-accent transition-colors">
+            +91 7671972625
+          </a>
+        </div>
+      </div>
+    ),
     description: 'Mon-Fri from 9am to 6pm',
   },
   {
     icon: MapPin,
-    title: 'Visit Us',
+    title: 'Hyderabad Office',
     details: (
-      <><>
-        CDB Architects, Flat : 101, 1st Floor,<br />
+      <>
+        Flat : 101, 1st Floor,<br />
         Sri Siri Eeshvatam Apartment,<br />
-        Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />
+        Opposite Skyla studios, Jubilee Garden Rd no-01.<br />
         Kothaguda, Hyderabad 500084
-      </><>
-          8951 Cypress Waters Blvd Suite 160,<br />
-          Coppell, TX 75019
-        </></>
+      </>
     ),
     description: 'Corporate Office',
+  },
+  {
+    icon: MapPin,
+    title: 'USA Office',
+    details: (
+      <>
+        8951 Cypress Waters Blvd<br />
+        Suite 160,<br />
+        Coppell, TX 75019
+      </>
+    ),
+    description: 'Branch Office',
   },
 ];
 
@@ -147,7 +165,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-foreground font-medium">{item.details}</p>
+                  <div className="text-foreground font-medium">{item.details}</div>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
               </div>

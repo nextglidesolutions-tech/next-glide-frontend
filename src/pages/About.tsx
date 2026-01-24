@@ -7,7 +7,7 @@ const stats = [
   { value: '10+', label: 'Successful Implementations' },
   { value: '10+', label: 'Enterprise Clients' },
   { value: '15+', label: 'Certified Experts' },
-  { value: '2+', label: 'Years Experience' },
+  { value: '1+', label: 'Years Experience' },
 ];
 
 const values = [
@@ -50,7 +50,7 @@ export default function About() {
               Your Trusted ServiceNow Partner
             </h1>
             <p className="body-large text-primary-foreground/80">
-              NextGlide Solutions Private Limited is a premier ServiceNow consulting
+              NextGlide Solutions Private Limited is a ServiceNow consulting
               partner, delivering enterprise digital transformation solutions to
               global organizations across industries.
             </p>
