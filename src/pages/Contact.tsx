@@ -49,7 +49,7 @@ const contactInfo = [
       <>
         8951 Cypress Waters Blvd<br />
         Suite 160,<br />
-        dallas, Texas 75019
+        Dallas, Texas 75019
       </>
     ),
     description: 'Branch Office',

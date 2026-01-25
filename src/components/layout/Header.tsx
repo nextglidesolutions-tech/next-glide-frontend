@@ -90,6 +90,11 @@ export function Header() {
                     {/* Dropdown Menu */}
                     <div className="absolute top-full left-0 w-[32rem] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                       <div className="bg-card border border-border/50 shadow-xl rounded-xl p-2 overflow-hidden">
+                        {item.name === 'Solutions' && (
+                          <div className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider border-b border-border/50 mb-1">
+                            ServiceNow Solutions We Offer
+                          </div>
+                        )}
                         {items.length > 0 ? (
                           <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
                             {items.map((subItem) => (
