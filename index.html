@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
+  <!-- ==============================================================================================
+       1. CORE META TAGS
+       Essential settings for character encoding, viewport, and browser behavior.
+  =============================================================================================== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#0B3C5D" />
 
+  <!-- ==============================================================================================
+       2. GOOGLE ANALYTICS (GA4)
+       Tracking code for user behavior and traffic analysis.
+  =============================================================================================== -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF6WJ3VDF8"></script>
   <script>
@@ -15,60 +25,195 @@
     gtag('config', 'G-RF6WJ3VDF8');
   </script>
 
-  <!-- =========================
-         Primary SEO
-    ========================== -->
-  <title>
-    NextGlide Solutions Private Limited | Enterprise ServiceNow Consulting & Digital Workflow Automation
-  </title>
+  <!-- ==============================================================================================
+       3. PRIMARY SEO TAGS
+       Crucial for Search Engine Optimization ranking and click-through rates.
+  =============================================================================================== -->
+  <title>NextGlide Solutions | Enterprise ServiceNow Consulting & Automation</title>
 
   <meta name="description"
-    content="NextGlide Solutions Private Limited is a trusted ServiceNow consulting and implementation partner delivering scalable digital workflow solutions across ITSM, ITOM, HRSD, GRC, CSM, ITAM, SPM, and AI-powered enterprise automation for global enterprises and government organizations." />
+    content="NextGlide Solutions is a premier ServiceNow partner delivering enterprise-grade digital workflows, ITSM, ITOM, HRSD, and AI-driven automation for global businesses." />
 
   <meta name="keywords"
-    content="ServiceNow consulting, ServiceNow partner, ITSM, ITOM, HR Service Delivery, GRC, CSM, IT Asset Management, ServiceNow implementation, ServiceNow integrations, enterprise workflow automation, digital transformation, ServiceNow advisory services" />
+    content="ServiceNow Consulting, ServiceNow Partner, ITSM Implementation, ITOM Solutions, HRSD Workflows, GRC Automation, CSM, IT Asset Management, Digital Transformation, Enterprise AI, Workflow Automation, NextGlide Solutions" />
 
   <meta name="author" content="NextGlide Solutions Private Limited" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://www.nextglidesolutions.com/" />
 
-  <!-- =========================
-         Open Graph (LinkedIn / Facebook)
-    ========================== -->
+  <!-- Geo-tags for Local SEO (Assuming User Base / HQ location context - Generic India/Global) -->
+  <meta name="geo.region" content="IN-TG" />
+  <meta name="geo.placename" content="Hyderabad" />
+  <meta name="geo.position" content="17.3850;78.4867" />
+  <meta name="ICBM" content="17.3850, 78.4867" />
+
+  <!-- ==============================================================================================
+       4. SOCIAL MEDIA & OPEN GRAPH (OG)
+       Controls how the website appears when shared on Facebook, LinkedIn, etc.
+  =============================================================================================== -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NextGlide Solutions" />
   <meta property="og:title" content="NextGlide Solutions | Enterprise ServiceNow Consulting Partner" />
   <meta property="og:description"
-    content="Driving enterprise digital transformation with ServiceNow advisory, implementation, AI automation, and managed services. Trusted by enterprises and government organizations worldwide." />
-  <meta property="og:type" content="website" />
+    content="Transform your business with expert ServiceNow implementation, advisory, and managed services. Scalable AI-driven solutions for ITSM, HR, and GRC." />
   <meta property="og:url" content="https://www.nextglidesolutions.com/" />
   <meta property="og:image" content="https://www.nextglidesolutions.com/assets/og-banner.png" />
-  <meta property="og:site_name" content="NextGlide Solutions Private Limited" />
+  <meta property="og:image:secure_url" content="https://www.nextglidesolutions.com/assets/og-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="NextGlide Solutions Enterprise Consulting Banner" />
 
-  <!-- =========================
-         Twitter Card
-    ========================== -->
+  <!-- ==============================================================================================
+       5. TWITTER CARDS
+       Optimizes display on X (formerly Twitter).
+  =============================================================================================== -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NextGlide Solutions | ServiceNow Digital Transformation Experts" />
+  <meta name="twitter:site" content="@NextGlide" />
+  <meta name="twitter:title" content="NextGlide Solutions | ServiceNow Digital Transformation" />
   <meta name="twitter:description"
-    content="Enterprise-grade ServiceNow consulting, AI-driven workflow automation, and managed services for scalable digital transformation." />
+    content="Accelerate digital transformation with NextGlide's expert ServiceNow consulting. ITSM, ITOM, and AI automation experts." />
   <meta name="twitter:image" content="https://www.nextglidesolutions.com/assets/og-banner.png" />
 
-  <!-- =========================
-         Brand & UI
-    ========================== -->
-  <meta name="theme-color" content="#0B3C5D" />
-  <link rel="icon" href="/favicon.ico" />
+  <!-- ==============================================================================================
+       6. RESOURCES & PRECONNECTS
+       Performance optimization for external assets.
+  =============================================================================================== -->
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- =========================
-         Fonts (Optional)
-    ========================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- ==============================================================================================
+       7. STRUCTURED DATA (JSON-LD)
+       Helps search engines understand the Organization and Site Navigation.
+  =============================================================================================== -->
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NextGlide Solutions Private Limited",
+      "alternateName": "NextGlide",
+      "url": "https://www.nextglidesolutions.com",
+      "logo": "https://www.nextglidesolutions.com/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/nextglide-solutions",
+        "https://twitter.com/nextglide",
+        "https://www.facebook.com/nextglidesolutions"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7671972625",
+        "contactType": "sales",
+        "areaServed": "Global",
+        "availableLanguage": ["English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      }
+    }
+  </script>
+
+  <!-- Website Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NextGlide Solutions",
+      "url": "https://www.nextglidesolutions.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.nextglidesolutions.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- Site Navigation Schema (Breadcrumbs / Sitelinks) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "About Us",
+          "description": "Learn about NextGlide's mission and team.",
+          "url": "https://www.nextglidesolutions.com/about"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Solutions",
+          "description": "Explore our ServiceNow solutions and accelerators.",
+          "url": "https://www.nextglidesolutions.com/solutions"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Services",
+          "description": "Professional services, consulting, and implementation.",
+          "url": "https://www.nextglidesolutions.com/services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Industries",
+          "description": "Tailored solutions for various industry verticals.",
+          "url": "https://www.nextglidesolutions.com/industries"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Social Connects",
+          "description": "Latest news, updates, and community insights.",
+          "url": "https://www.nextglidesolutions.com/social-connects"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Careers",
+          "description": "Join our team of elite ServiceNow professionals.",
+          "url": "https://www.nextglidesolutions.com/careers"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 7,
+          "name": "Contact",
+          "description": "Get in touch with our experts.",
+          "url": "https://www.nextglidesolutions.com/contact"
+        }
+      ]
+    }
+  </script>
+
 </head>
 
-<body>
+<body class="antialiased min-h-screen bg-background font-sans text-foreground">
+  <!-- 
+      React Root Application Mount Point 
+      The entire React application loads into this div.
+  -->
   <div id="root"></div>
+
+  <!-- Main Application Script -->
   <script type="module" src="/src/main.tsx"></script>
+
+  <!-- 
+      Additional Monitoring / Performance Scripts can be placed here
+      (e.g., Tawk.to, Hotjar, etc.)
+  -->
 </body>
 
 </html>
