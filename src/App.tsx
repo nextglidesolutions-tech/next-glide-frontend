@@ -31,6 +31,7 @@ import AdminAllContacts from "./pages/AdminAllContacts";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import DirectContentPage from "./pages/DirectContentPage";
+import SocialConnects from "./pages/SocialConnects";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/social-connects" element={<SocialConnects />} />
 
           {/* Solutions Direct Routes */}
           <Route path="/itsm" element={<DirectContentPage
@@ -79,22 +81,22 @@ const App = () => (
               "Enables faster root-cause analysis"
             ]}
           />} />
-        <Route
-  path="/spm"
-  element={
-    <DirectContentPage
-      title="SPM – Strategic Portfolio Management"
-      subtitle="Strategic Portfolio Management"
-      benefits={[
-        "Aligns business strategy with execution and delivery",
-        "Provides end-to-end visibility into portfolios, programs, and projects",
-        "Improves prioritization of initiatives based on business value",
-        "Enables effective demand and capacity management",
-        "Tracks progress, outcomes, and value realization of investments"
-      ]}
-    />
-  }
-/>
+          <Route
+            path="/spm"
+            element={
+              <DirectContentPage
+                title="SPM – Strategic Portfolio Management"
+                subtitle="Strategic Portfolio Management"
+                benefits={[
+                  "Aligns business strategy with execution and delivery",
+                  "Provides end-to-end visibility into portfolios, programs, and projects",
+                  "Improves prioritization of initiatives based on business value",
+                  "Enables effective demand and capacity management",
+                  "Tracks progress, outcomes, and value realization of investments"
+                ]}
+              />
+            }
+          />
 
           <Route path="/csm" element={<DirectContentPage
             title="CSM – Customer Service Management"

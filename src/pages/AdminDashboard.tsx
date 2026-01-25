@@ -25,6 +25,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import JobManager from '@/components/admin/JobManager';
 import FormBuilder from '@/components/admin/FormBuilder';
 import ChatLogViewer from '@/components/admin/ChatLogViewer';
+import SocialPostManager from '@/components/admin/SocialPostManager';
 
 interface Contact {
     _id: string;
@@ -229,6 +230,9 @@ export default function AdminDashboard() {
                             <TabsTrigger value="chatlogs" className="flex items-center gap-2">
                                 <MessageSquare className="w-4 h-4" /> Chatbot Q&A
                             </TabsTrigger>
+                            <TabsTrigger value="socialposts" className="flex items-center gap-2">
+                                <MessageSquare className="w-4 h-4" /> Social Posts
+                            </TabsTrigger>
                         </TabsList>
                     </div>
 
@@ -327,6 +331,10 @@ export default function AdminDashboard() {
 
                     <TabsContent value="chatlogs">
                         <ChatLogViewer />
+                    </TabsContent>
+
+                    <TabsContent value="socialposts">
+                        <SocialPostManager />
                     </TabsContent>
                 </Tabs>
             </div>
