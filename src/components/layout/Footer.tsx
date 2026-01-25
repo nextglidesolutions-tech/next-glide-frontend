@@ -86,20 +86,30 @@ export function Footer() {
                 <Phone className="w-5 h-5" />
                 +91 7671972625
               </a>
-              <div className="flex items-start gap-3 text-primary-foreground/70">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>
-                  Flat : 101, 1st Floor,<br />
-                  Sri Siri Eeshvatam Apartment,<br />
-                  Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />
-                  Kothaguda, Hyderabad 500084
-                </span>
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>
-                  8951 Cypress Waters Blvd Suite 160,<br />
-                  Coppell, TX 75019
-                </span>
+              <div className="flex flex-col gap-4 text-primary-foreground/70">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                  <div>
+                    <strong className="block text-primary-foreground mb-1">INDIA Office</strong>
+                    <span>
+                      Flat : 101, 1st Floor,<br />
+                      Sri Siri Eeshvatam Apartment,<br />
+                      Opposite Skyla studios, Jubilee Garden Road n.o-01.<br />
+                      HITEC city, Hyderabad 500084
+                    </span>
+                  </div>
+                </div>
 
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                  <div>
+                    <strong className="block text-primary-foreground mb-1">USA Office</strong>
+                    <span>
+                      8951 Cypress Waters Blvd Suite 160,<br />
+                      Dallas, Texas 75019
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
