@@ -88,7 +88,7 @@ export function Header() {
                     </Link>
 
                     {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+                    <div className="absolute top-full left-0 w-[32rem] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                       <div className="bg-card border border-border/50 shadow-xl rounded-xl p-2 overflow-hidden">
                         {items.length > 0 ? (
                           <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
@@ -96,7 +96,7 @@ export function Header() {
                               <Link
                                 key={subItem._id}
                                 to={`${item.href}/${subItem.slug}`}
-                                className="block px-4 py-3 text-sm rounded-lg hover:bg-muted/80 hover:text-accent transition-colors truncate"
+                                className="block px-4 py-3 text-sm rounded-lg hover:bg-muted/80 hover:text-accent transition-colors"
                               >
                                 {subItem.name}
                               </Link>

@@ -130,9 +130,9 @@ export default function ServiceDetail() {
     return (
         <Layout>
             {/* HERO SECTION */}
-            <section className="pt-32 pb-10 hero-gradient relative">
+            <section className="pt-24 pb-8 hero-gradient relative">
                 <div className="container-custom relative z-10">
-                    <div className="max-w-4xl">
+                    <div className="max-w-7xl">
                         <span className="inline-block px-3 py-1 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6">
                             {service.category}
                         </span>

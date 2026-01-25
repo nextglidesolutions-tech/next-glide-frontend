@@ -164,7 +164,7 @@ export default function SolutionDetail() {
     return (
         <Layout>
             {/* HERO SECTION */}
-            <section className="pt-32 pb-20 hero-gradient relative overflow-hidden">
+            <section className="pt-24 pb-8 hero-gradient relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 pointer-events-none">
                     <div className="absolute top-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
                 </div>
@@ -174,7 +174,7 @@ export default function SolutionDetail() {
                             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Solutions
                         </Link>
                     </div>
-                    <div className="max-w-4xl">
+                    <div className="max-w-7xl">
                         <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white text-xs font-semibold uppercase tracking-wider mb-6 border border-white/20">
                             {solution.category}
                         </span>

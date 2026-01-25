@@ -31,20 +31,20 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: 'Hyderabad Office',
+    title: 'INDIA ',
     details: (
       <>
         Flat : 101, 1st Floor,<br />
         Sri Siri Eeshvatam Apartment,<br />
         Opposite Skyla studios, Jubilee Garden Rd no-01.<br />
-        Kothaguda, Hyderabad 500084
+       HITEC city, Hyderabad 500084
       </>
     ),
     description: 'Corporate Office',
   },
   {
     icon: MapPin,
-    title: 'USA Office',
+    title: 'USA ',
     details: (
       <>
         8951 Cypress Waters Blvd<br />
