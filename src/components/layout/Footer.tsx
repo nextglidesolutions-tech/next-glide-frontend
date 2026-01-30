@@ -1,5 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const footerLinks = {
@@ -25,6 +26,21 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (widgetRef.current) {
+      const scriptId = "mapmyvisitors";
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.id = scriptId;
+        script.src = "//mapmyvisitors.com/map.js?d=O7OTlgz594QUhnokzzuoKd7yZ-TuIeiartc0b3O-yMQ&cl=ffffff&w=a";
+        widgetRef.current.appendChild(script);
+      }
+    }
+  }, []);
+
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* CTA Section */}
@@ -148,6 +164,8 @@ export function Footer() {
             </ul>
           </div>
 
+
+
           {/* Company */}
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Company</h4>
@@ -164,12 +182,30 @@ export function Footer() {
               ))}
             </ul>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+              <a
+                href="https://www.linkedin.com/company/nextglide-solutions-private-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a
+                href="https://www.instagram.com/nextglidesolutions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
+            </div>
+
+            {/* Visitors Widget */}
+            <div className="flex flex-col mt-8">
+              <h4 className="font-semibold text-primary-foreground mb-4">Visitors</h4>
+              <div ref={widgetRef} className="overflow-hidden rounded-lg bg-primary-foreground/10">
+                {/* Script will be injected here */}
+              </div>
             </div>
           </div>
         </div>

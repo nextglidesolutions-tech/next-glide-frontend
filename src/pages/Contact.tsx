@@ -3,7 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, MessageSquare, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare, Calendar, ArrowRight, CheckCircle2, Linkedin, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Chatbot from '@/components/shared/Chatbot';
 
@@ -25,6 +25,26 @@ const contactInfo = [
             +91 7671972625
           </a>
         </div>
+        <div className="flex items-center gap-4 mt-2">
+          <a
+            href="https://www.linkedin.com/company/nextglide-solutions-private-limited/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all"
+            title="LinkedIn"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.instagram.com/nextglidesolutions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all"
+            title="Instagram"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     ),
     description: 'Mon-Fri from 9am to 6pm',
@@ -37,7 +57,7 @@ const contactInfo = [
         Flat : 101, 1st Floor,<br />
         Sri Siri Eeshvatam Apartment,<br />
         Opposite Skyla studios, Jubilee Garden Rd no-01.<br />
-       HITEC city, Hyderabad 500084
+        HITEC city, Hyderabad 500084
       </>
     ),
     description: 'Corporate Office',
