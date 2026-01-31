@@ -25,6 +25,12 @@ const contactInfo = [
             +91 7671972625
           </a>
         </div>
+        <div className="flex items-center gap-2">
+          <Phone className="w-4 h-4 text-accent" />
+          <a href="tel:+4696301244" className="hover:text-accent transition-colors">
+            (469) 630-1244
+          </a>
+        </div>
         <div className="flex items-center gap-4 mt-2">
           <a
             href="https://www.linkedin.com/company/nextglide-solutions-private-limited/"
