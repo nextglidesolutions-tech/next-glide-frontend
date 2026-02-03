@@ -14,7 +14,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
       {/* Subtle Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
@@ -39,11 +39,11 @@ export function HeroSection() {
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container-custom relative z-10 pt-32 pb-20">
+      <div className="container-custom relative z-10 pt-24 pb-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            
+
 
             <h1 className="heading-2 text-primary mb-4 animate-fade-up delay-100">
               Transform Your Enterprise with{' '}
@@ -51,8 +51,8 @@ export function HeroSection() {
             </h1>
 
             <p className="body-large text-muted-foreground mb-4 max-w-xl animate-fade-up delay-200">
-              NextGlide Solutions delivers end-to-end ServiceNow implementations, 
-              helping global enterprises streamline operations, enhance productivity, 
+              NextGlide Solutions delivers end-to-end ServiceNow implementations,
+              helping global enterprises streamline operations, enhance productivity,
               and accelerate digital transformation.
             </p>
 

@@ -8,7 +8,7 @@ export function CTASection() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="section-padding hero-gradient relative overflow-hidden">
+    <section className="py-10 hero-gradient relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 right-20 w-64 h-64 bg-accent rounded-full blur-3xl" />
